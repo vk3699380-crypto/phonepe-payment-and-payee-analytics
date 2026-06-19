@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Cloned data repositories and local databases
+phonepe_pulse/
+pulse/
+*.db
+*.sqlite
+
+# OS files
+.DS_Store
+Thumbs.db

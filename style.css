@@ -1,0 +1,307 @@
+/* ====================================================================
+   PhonePe Payment Insights - Brand Purple CSS Design System
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* CSS Variables for Dynamic Light / Dark Theming */
+:root {
+    --radius: 12px;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 16px -2px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hide default Streamlit visual headers, decorations, and footers */
+header[data-testid="stHeader"], 
+#MainMenu, 
+footer, 
+[data-testid="stToolbar"],
+[data-testid="stDecoration"], 
+[data-testid="stStatusWidget"], 
+.stDeployButton,
+div[data-testid="stSidebarCollapsedControl"] {
+    display: none !important;
+}
+
+/* Global Typography & Background Restyling */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"], .main, .block-container, section[data-testid="stMain"] {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Custom Spacing inside Container */
+.block-container {
+    padding: 1.5rem 2.5rem 3rem !important;
+    max-width: 1400px !important;
+}
+
+/* Card layout gap fix */
+[data-testid="stHorizontalBlock"] {
+    gap: 1.25rem !important;
+}
+
+/* Clean Sidebar */
+[data-testid="stSidebar"] {
+    background-color: var(--bg-subtle) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+/* Brand Header Styling */
+.brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.brand-logo {
+    color: var(--accent);
+    font-size: 1.6rem;
+}
+
+/* Brand Vision Banner */
+.vision-banner {
+    background-color: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.vision-banner:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+.vision-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+.vision-text {
+    font-size: 1.32rem;
+    line-height: 1.75;
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* Brand Pill Capsules */
+.pill-purple {
+    background: var(--pill-bg) !important;
+    color: var(--pill-text) !important;
+    padding: 2px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--pill-border) !important;
+    display: inline-block;
+    margin: 2px 4px;
+    font-weight: 500;
+}
+.pill-white {
+    background: var(--pill-highlight-bg) !important;
+    color: var(--pill-highlight-text) !important;
+    padding: 2px 14px;
+    border-radius: 9999px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 2px 4px;
+    border: 1px solid var(--pill-highlight-border) !important;
+}
+
+/* Custom Metric Card UI */
+.metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.metric-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.metric-label {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+.metric-value {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    font-family: 'DM Sans', sans-serif;
+}
+.metric-delta {
+    font-size: 0.74rem;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.delta-up {
+    color: var(--green);
+    background: var(--green-muted);
+}
+.delta-down {
+    color: var(--red);
+    background: var(--red-muted);
+}
+.delta-warn {
+    color: var(--amber);
+    background: var(--amber-muted);
+}
+
+/* Visual Wrap for Plotly Charts */
+.chart-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+.chart-wrap:hover {
+    box-shadow: var(--shadow-md);
+}
+.chart-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.1rem;
+}
+.chart-subtitle {
+    font-size: 0.73rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+/* Custom HTML Tables matching Design System */
+.table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.82rem;
+}
+.data-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    background-color: var(--bg-subtle);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+.data-table td {
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border-subtle);
+    font-family: 'DM Sans', sans-serif;
+}
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+.data-table tbody tr:hover {
+    background-color: var(--bg-subtle);
+}
+.mono-font {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.78rem;
+}
+
+/* Badges for status indicators */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.badge-green { color: var(--green); background: var(--green-muted); }
+.badge-red { color: var(--red); background: var(--red-muted); }
+.badge-amber { color: var(--amber); background: var(--amber-muted); }
+.badge-blue { color: var(--accent); background: var(--green-muted); }
+
+/* Navigation Tab Restyling */
+button[data-baseweb="tab"] {
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1rem !important;
+    border: 1px solid transparent !important;
+    border-radius: 8px !important;
+    transition: var(--transition) !important;
+}
+button[data-baseweb="tab"]:hover {
+    color: var(--text) !important;
+    background: var(--border-subtle) !important;
+}
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--tab-active-text) !important;
+    background: var(--tab-active-bg) !important;
+    border-color: var(--tab-active-border) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+[data-baseweb="tab-highlight"], [data-baseweb="tab-border"] {
+    display: none !important;
+}
+[data-baseweb="tab-list"] {
+    gap: 4px !important;
+    background: var(--bg-subtle) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    padding: 4px;
+    margin-bottom: 1.5rem;
+}
+
+/* Dynamic Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
